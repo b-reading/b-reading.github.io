@@ -26,25 +26,12 @@
         }
 
         input,
-        select,
-        button {
+        select {
             margin: 0.5rem 0;
             padding: 0.5rem;
             width: 100%;
             border-radius: 5px;
             border: 1px solid #ccc;
-        }
-
-        button {
-            background-color: #2a7ae2;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        button:hover {
-            background-color: #1a5cb8;
         }
 
         ul {
@@ -68,7 +55,7 @@
     <div class="container">
         <h1>Knihy CBDB</h1>
 
-        <div class="last-updated" id="last-updated">Data budou načtena...</div>
+        <div class="last-updated" id="last-updated">Načítání dat...</div>
 
         <select id="reader">
             <option value="all">Všichni</option>
@@ -79,26 +66,15 @@
         </select>
 
         <input type="text" id="search" placeholder="Zadej název knihy nebo autora" />
-        <button id="fetch-all">Fetch all data</button>
-
         <ul id="books"></ul>
     </div>
 
     <script>
-        const users = {
-            "Dominik": "https://www.cbdb.cz/uzivatel-142475-dajmond/knihy?booklist_2=1&actual_page=3",
-            "hancik": "https://www.cbdb.cz/uzivatel-140154-hancik/knihy?booklist_2=1&actual_page=9",
-            "Daniel": "https://www.cbdb.cz/uzivatel-142474-lammy/knihy?booklist_2=1&actual_page=2",
-            "Jakub": "https://www.cbdb.cz/uzivatel-209349-jakub-kruzik/knihy?booklist_2=1"
-        };
-
         let books = [];
-
         const ul = document.getElementById("books");
         const input = document.getElementById("search");
         const select = document.getElementById("reader");
         const lastUpdated = document.getElementById("last-updated");
-        const fetchButton = document.getElementById("fetch-all");
 
         function renderBooks() {
             const filterText = input.value.toLowerCase();
@@ -127,53 +103,11 @@
                 lastUpdated.textContent = "Last updated: " + new Date().toLocaleString();
                 renderBooks();
             } catch (e) {
-                lastUpdated.textContent = "Data nejsou dostupná. Klikni 'Fetch all data'.";
+                lastUpdated.textContent = "Data nejsou dostupná.";
                 console.error(e);
             }
         }
 
-        async function fetchAllData() {
-            lastUpdated.textContent = "Fetching data... this may take a couple of minutes!";
-            books = [];
-
-            for (const [reader, url] of Object.entries(users)) {
-                lastUpdated.textContent = `Fetching books for ${reader}...`;
-                try {
-                    const res = await fetch(url);
-                    const html = await res.text();
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, "text/html");
-                    const items = doc.querySelectorAll(".book_items .book_item");
-
-                    items.forEach(el => {
-                        const titleEl = el.querySelector(".book_item_name a");
-                        const title = titleEl ? titleEl.textContent.trim() : null;
-                        const authorEl = el.querySelector(".book_item_author a");
-                        const author = authorEl ? authorEl.textContent.trim() : null;
-                        const link = titleEl ? "https://www.cbdb.cz" + titleEl.getAttribute("href") : null;
-
-                        if (title && author) {
-                            const key = title + "||" + author;
-                            const existing = books.find(b => b.key === key);
-                            if (existing) {
-                                existing.readers.push(reader);
-                            } else {
-                                books.push({key, title, author, link, readers: [reader]});
-                            }
-                        }
-                    });
-                } catch (e) {
-                    console.error(`Error fetching ${reader}:`, e);
-                }
-            }
-
-            lastUpdated.textContent = "Data fetched at: " + new Date().toLocaleString();
-            renderBooks();
-        }
-
-        fetchButton.addEventListener("click", fetchAllData);
-
-        // Load saved JSON initially
         loadJSON();
     </script>
 </body>

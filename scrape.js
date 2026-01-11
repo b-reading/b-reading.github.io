@@ -26,12 +26,13 @@ async function scrapeUser(user) {
     const $ = cheerio.load(html);
 
     // Detect total pages from pagination
-    const pages = $(".pagination .page_number")
+    const pages = $(".text-center a.pagination_item")
       .map((_, el) => parseInt($(el).text()))
       .get()
       .filter(n => !isNaN(n));
-
     totalPages = pages.length ? Math.max(...pages) : 1;
+
+
 
     console.log(`${user.label}: ${totalPages} pages detected`);
 

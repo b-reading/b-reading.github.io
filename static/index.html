@@ -98,7 +98,7 @@
 
         async function loadJSON() {
             try {
-                const res = await fetch("static/books.json");
+                const res = await fetch("books.json");
                 books = await res.json();
                 lastUpdated.textContent = "Last updated: " + new Date().toLocaleString();
                 renderBooks();
@@ -111,4 +111,5 @@
         loadJSON();
     </script>
 </body>
+
 </html>

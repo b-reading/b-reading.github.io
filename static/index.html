@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Knihy</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2rem;
+        }
+
+        input {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            width: 300px;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Knihy</h1>
+    <input type="text" id="search" placeholder="Zadej název knihy nebo autora" />
+    <ul id="books"></ul>
+
+    <script>
+        async function loadBooks() {
+            const res = await fetch("books.json");
+            const books = await res.json();
+            const ul = document.getElementById("books");
+            const input = document.getElementById("search");
+
+            function render(filter = "") {
+                ul.innerHTML = "";
+                const f = filter.toLowerCase();
+                books
+                    .filter(b => b.title.toLowerCase().includes(f) || b.author.toLowerCase().includes(f))
+                    .forEach(b => {
+                        const li = document.createElement("li");
+                        li.innerHTML = `<strong>${b.title}</strong> – ${b.author}`;
+                        ul.appendChild(li);
+                    });
+            }
+
+            input.addEventListener("input", e => render(e.target.value));
+            render();
+        }
+
+        loadBooks();
+    </script>
+</body>
+
+</html>

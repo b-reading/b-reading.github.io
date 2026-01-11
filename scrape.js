@@ -1,56 +1,64 @@
-const fetch = require("node-fetch"); // musí být v2.x
+const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 const fs = require("fs");
 
-const baseBaseUrl =
-  "https://www.cbdb.cz/uzivatel-140154-hancik/knihy?booklist_2=1";
+const users = [
+  {username: "hancik", label: "Já"},
+  {username: "mama", label: "Mamka"},
+  {username: "bratr", label: "Brácha"}
+];
 
-async function scrape() {
+const outputFile = "static/books.json";
+
+async function scrapeUser(user) {
   const books = [];
   let page = 1;
+  const baseUrl = `https://www.cbdb.cz/uzivatel-${user.username}/knihy?booklist_2=1`;
 
   while (true) {
-    const url = `${baseBaseUrl}&actual_page=${page}`;
-    console.log("Stahuju:", url);
+    const url = `${baseUrl}&actual_page=${page}`;
+    console.log(`Scraping ${user.label}:`, url);
 
     const res = await fetch(url, {
       headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120",
+        "User-Agent": "Mozilla/5.0",
         "Accept-Language": "cs-CZ,cs;q=0.9"
       }
     });
-
     const html = await res.text();
     const $ = cheerio.load(html);
-
     const items = $(".book_items .book_item");
     if (!items.length) break;
 
     items.each((_, el) => {
       const titleEl = $(el).find(".book_item_name a").first();
-      const authorEl = $(el).find(".book_item_author a").first();
-
       const title = titleEl.text().trim();
-      const author = authorEl.text().trim();
-      const link = titleEl.attr("href");
+      const author = $(el).find(".book_item_author a").first().text().trim();
+      const link = titleEl.attr("href") ? `https://www.cbdb.cz${titleEl.attr("href")}` : null;
 
       if (title) {
-        books.push({
-          title,
-          author,
-          link: link ? `https://www.cbdb.cz${link}` : null
-        });
+        books.push({title, author, link});
       }
     });
-
     page++;
   }
 
-  fs.writeFileSync("static/books.json", JSON.stringify(books, null, 2));
-  console.log(`Hotovo! Nalezeno ${books.length} knih.`);
+  return books;
 }
 
-scrape();
+(async () => {
+  const merged = {};
 
-//
+  for (const user of users) {
+    const userBooks = await scrapeUser(user);
+    for (const book of userBooks) {
+      const key = `${book.title}||${book.author}`;
+      if (!merged[key]) merged[key] = {...book, readers: []};
+      merged[key].readers.push(user.label);
+    }
+  }
+
+  const finalBooks = Object.values(merged);
+  fs.writeFileSync(outputFile, JSON.stringify(finalBooks, null, 2));
+  console.log(`Done! ${finalBooks.length} books saved.`);
+})();

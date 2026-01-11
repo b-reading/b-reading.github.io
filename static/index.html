@@ -10,7 +10,8 @@
             margin: 2rem;
         }
 
-        input {
+        input,
+        select {
             margin-bottom: 1rem;
             padding: 0.5rem;
             width: 300px;
@@ -24,7 +25,16 @@
 
 <body>
     <h1>Knihy</h1>
+
+    <select id="reader">
+        <option value="all">Všichni</option>
+        <option value="Já">Já</option>
+        <option value="Mamka">Mamka</option>
+        <option value="Brácha">Brácha</option>
+    </select>
+
     <input type="text" id="search" placeholder="Zadej název knihy nebo autora" />
+
     <ul id="books"></ul>
 
     <script>
@@ -33,20 +43,27 @@
             const books = await res.json();
             const ul = document.getElementById("books");
             const input = document.getElementById("search");
+            const select = document.getElementById("reader");
 
-            function render(filter = "") {
+            function render() {
+                const filterText = input.value.toLowerCase();
+                const reader = select.value;
                 ul.innerHTML = "";
-                const f = filter.toLowerCase();
+
                 books
-                    .filter(b => b.title.toLowerCase().includes(f) || b.author.toLowerCase().includes(f))
+                    .filter(b =>
+                        (b.title.toLowerCase().includes(filterText) || b.author.toLowerCase().includes(filterText)) &&
+                        (reader === "all" || b.readers.includes(reader))
+                    )
                     .forEach(b => {
                         const li = document.createElement("li");
-                        li.innerHTML = `<strong>${b.title}</strong> – ${b.author}`;
+                        li.innerHTML = `<a href="${b.link}" target="_blank"><strong>${b.title}</strong></a> – ${b.author} (${b.readers.join(", ")})`;
                         ul.appendChild(li);
                     });
             }
 
-            input.addEventListener("input", e => render(e.target.value));
+            input.addEventListener("input", render);
+            select.addEventListener("change", render);
             render();
         }
 

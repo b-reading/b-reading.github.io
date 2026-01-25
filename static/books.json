@@ -850,19 +850,19 @@
   },
   {
     "title": "Inferno",
-    "author": "Dmitrij Rus",
-    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
-    "readers": [
-      "Dominik"
-    ]
-  },
-  {
-    "title": "Inferno",
     "author": "Dan Brown",
     "link": "https://www.cbdb.cz/kniha-87866-inferno-inferno",
     "readers": [
       "Dominik",
       "hancik"
+    ]
+  },
+  {
+    "title": "Inferno",
+    "author": "Dmitrij Rus",
+    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
+    "readers": [
+      "Dominik"
     ]
   },
   {
@@ -3413,6 +3413,14 @@
     ]
   },
   {
+    "title": "Finale",
+    "author": "Stephanie Garber",
+    "link": "https://www.cbdb.cz/kniha-256721-finale",
+    "readers": [
+      "hancik"
+    ]
+  },
+  {
     "title": "Firma",
     "author": "John Grisham",
     "link": "https://www.cbdb.cz/kniha-1049-firma-the-firm",
@@ -3772,6 +3780,14 @@
     ]
   },
   {
+    "title": "Legenda",
+    "author": "Stephanie Garber",
+    "link": "https://www.cbdb.cz/kniha-230132-legenda-legendary",
+    "readers": [
+      "hancik"
+    ]
+  },
+  {
     "title": "Liga vyděšených",
     "author": "Rex Stout",
     "link": "https://www.cbdb.cz/kniha-13638-liga-vydesenych-the-league-of-frightened-men",
@@ -3977,6 +3993,14 @@
     "title": "Mrtvá beze jména",
     "author": "Patricia Cornwell",
     "link": "https://www.cbdb.cz/kniha-15726-mrtva-beze-jmena-from-potters-field",
+    "readers": [
+      "hancik"
+    ]
+  },
+  {
+    "title": "Můj klenot",
+    "author": "Lauren Blakely",
+    "link": "https://www.cbdb.cz/kniha-447732-muj-klenot-big-rock",
     "readers": [
       "hancik"
     ]

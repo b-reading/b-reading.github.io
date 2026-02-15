@@ -18,8 +18,8 @@
   },
   {
     "title": "Alchymista",
-    "author": "Paulo Coelho",
-    "link": "https://www.cbdb.cz/kniha-117-alchymista-o-alquimista",
+    "author": "Michael Scott",
+    "link": "https://www.cbdb.cz/kniha-5801-alchymista-alchemyst",
     "readers": [
       "Dominik",
       "hancik"
@@ -27,8 +27,8 @@
   },
   {
     "title": "Alchymista",
-    "author": "Michael Scott",
-    "link": "https://www.cbdb.cz/kniha-5801-alchymista-alchemyst",
+    "author": "Paulo Coelho",
+    "link": "https://www.cbdb.cz/kniha-117-alchymista-o-alquimista",
     "readers": [
       "Dominik",
       "hancik"
@@ -902,6 +902,14 @@
     "title": "Jmenuji se Alice",
     "author": "Ivona Březinová",
     "link": "https://www.cbdb.cz/kniha-7101-jmenuji-se-alice",
+    "readers": [
+      "Dominik"
+    ]
+  },
+  {
+    "title": "Kamínek",
+    "author": "Marius Marcinkevičius",
+    "link": "https://www.cbdb.cz/kniha-528912-kaminek-akmenėlis",
     "readers": [
       "Dominik"
     ]
@@ -3334,7 +3342,7 @@
   },
   {
     "title": "Dvě věže",
-    "author": "J. R. R. Tolkien",
+    "author": "John Ronald Reuel Tolkien",
     "link": "https://www.cbdb.cz/kniha-327-dve-veze-the-two-towers",
     "readers": [
       "hancik"
@@ -3504,7 +3512,7 @@
   },
   {
     "title": "Hobit",
-    "author": "J. R. R. Tolkien",
+    "author": "John Ronald Reuel Tolkien",
     "link": "https://www.cbdb.cz/kniha-1329-hobit-the-hobbit-or-there-and-back-again",
     "readers": [
       "hancik",
@@ -4089,7 +4097,7 @@
   },
   {
     "title": "Návrat krále",
-    "author": "J. R. R. Tolkien",
+    "author": "John Ronald Reuel Tolkien",
     "link": "https://www.cbdb.cz/kniha-328-navrat-krale-the-return-of-the-king",
     "readers": [
       "hancik"
@@ -4453,7 +4461,7 @@
   {
     "title": "Postmortem",
     "author": "Patricia Cornwell",
-    "link": "https://www.cbdb.cz/kniha-15721-postmortem-postmortem",
+    "link": "https://www.cbdb.cz/kniha-419170-postmortem",
     "readers": [
       "hancik",
       "hancik"
@@ -4678,7 +4686,7 @@
   },
   {
     "title": "Silmarillion",
-    "author": "J. R. R. Tolkien",
+    "author": "John Ronald Reuel Tolkien",
     "link": "https://www.cbdb.cz/kniha-250-silmarillion-the-silmarillion",
     "readers": [
       "hancik"
@@ -4839,7 +4847,7 @@
   },
   {
     "title": "Společenstvo prstenu",
-    "author": "J. R. R. Tolkien",
+    "author": "John Ronald Reuel Tolkien",
     "link": "https://www.cbdb.cz/kniha-28-spolecenstvo-prstenu-the-lord-of-the-ringsthe-fellowship-of-the-ring",
     "readers": [
       "hancik",

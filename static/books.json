@@ -70,6 +70,14 @@
     ]
   },
   {
+    "title": "Artemis",
+    "author": "Andy Weir",
+    "link": "https://www.cbdb.cz/kniha-226562-artemis",
+    "readers": [
+      "Dominik"
+    ]
+  },
+  {
     "title": "Babička drsňačka",
     "author": "David Walliams",
     "link": "https://www.cbdb.cz/kniha-69504-babicka-drsnacka-gangsta-granny",
@@ -140,6 +148,14 @@
     "title": "Bubetka a Smítko",
     "author": "Miloš Nesvadba",
     "link": "https://www.cbdb.cz/kniha-56679-bubetka-a-smitko-bubetka-a-smitko",
+    "readers": [
+      "Dominik"
+    ]
+  },
+  {
+    "title": "Bylo nebylo",
+    "author": "Kiyash Monsef",
+    "link": "https://www.cbdb.cz/kniha-524650-bylo-nebylo-once-there-was",
     "readers": [
       "Dominik"
     ]
@@ -4535,7 +4551,7 @@
   {
     "title": "Postmortem",
     "author": "Patricia Cornwell",
-    "link": "https://www.cbdb.cz/kniha-419170-postmortem",
+    "link": "https://www.cbdb.cz/kniha-15721-postmortem-postmortem",
     "readers": [
       "hancik",
       "hancik"

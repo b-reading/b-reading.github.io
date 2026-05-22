@@ -1,15 +1,15 @@
 const dns = require("dns");
 dns.setDefaultResultOrder("ipv4first");
 
-const fetch = global.fetch;
+const { chromium } = require("playwright");
 const cheerio = require("cheerio");
 const fs = require("fs");
 
 const users = [
-  {username: "142475-dajmond", label: "Dominik"},
-  {username: "140154-hancik", label: "hancik"},
-  {username: "142474-lammy", label: "Daniel"},
-  {username: "209349-jakub-kruzik", label: "Jakub"},
+  { username: "142475-dajmond", label: "Dominik" },
+  { username: "140154-hancik", label: "hancik" },
+  { username: "142474-lammy", label: "Daniel" },
+  { username: "209349-jakub-kruzik", label: "Jakub" },
 ];
 
 const outputFile = "static/books.json";
@@ -18,63 +18,29 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-// safer fetch with retries + timeout
-async function fetchWithRetry(url, retries = 5) {
-  for (let i = 0; i < retries; i++) {
-    try {
-      console.log(`Fetching: ${url}`);
+async function getPageHTML(page, url) {
+  console.log("Loading:", url);
 
-      const controller = new AbortController();
+  await page.goto(url, {
+    waitUntil: "domcontentloaded",
+    timeout: 60000,
+  });
 
-      const timeout = setTimeout(() => {
-        controller.abort();
-      }, 30000);
+  // small delay for JS-rendered pages / anti-bot protection
+  await page.waitForTimeout(1500);
 
-      const res = await fetch(url, {
-        signal: controller.signal,
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36",
-          Accept:
-            "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-          "Accept-Language": "cs-CZ,cs;q=0.9,en;q=0.8",
-          Connection: "keep-alive",
-          "Upgrade-Insecure-Requests": "1",
-        },
-      });
-
-      clearTimeout(timeout);
-
-      if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
-      }
-
-      return res;
-    } catch (err) {
-      console.warn(`Fetch failed (attempt ${i + 1}): ${url}`);
-      console.warn(err.message);
-
-      if (i === retries - 1) {
-        throw err;
-      }
-
-      await sleep(5000);
-    }
-  }
+  return await page.content();
 }
 
-// scrape one user
-async function scrapeUser(user) {
+async function scrapeUser(page, user) {
   const books = [];
 
-  const firstPageUrl = `https://www.cbdb.cz/uzivatel-${user.username}/knihy?booklist_2=1&actual_page=1`;
+  const firstUrl = `https://www.cbdb.cz/uzivatel-${user.username}/knihy?booklist_2=1&actual_page=1`;
 
   let totalPages = 1;
 
   try {
-    const res = await fetchWithRetry(firstPageUrl);
-    const html = await res.text();
-
+    const html = await getPageHTML(page, firstUrl);
     const $ = cheerio.load(html);
 
     const pages = $(".text-center a.pagination_item")
@@ -86,54 +52,41 @@ async function scrapeUser(user) {
 
     console.log(`${user.label}: ${totalPages} pages detected`);
   } catch (e) {
-    console.error(`Error fetching first page for ${user.label}:`, e);
+    console.error(`Failed first page ${user.label}`, e);
     return books;
   }
 
-  for (let page = 1; page <= totalPages; page++) {
-    const url = `https://www.cbdb.cz/uzivatel-${user.username}/knihy?booklist_2=1&actual_page=${page}`;
-
-    console.log(`Scraping ${user.label}, page ${page}`);
+  for (let p = 1; p <= totalPages; p++) {
+    const url = `https://www.cbdb.cz/uzivatel-${user.username}/knihy?booklist_2=1&actual_page=${p}`;
 
     try {
-      const res = await fetchWithRetry(url);
-      const html = await res.text();
-
+      const html = await getPageHTML(page, url);
       const $ = cheerio.load(html);
 
       const items = $(".book_items .book_item");
 
-      if (items.length === 0) {
-        console.warn(`No books found on page ${page} for ${user.label}`);
+      if (!items.length) {
+        console.warn(`No books found: ${user.label} page ${p}`);
       }
 
       items.each((_, el) => {
         const titleEl = $(el).find(".book_item_name a").first();
 
         const title = titleEl.text().trim();
-
-        const author = $(el)
-          .find(".book_item_author a")
-          .first()
-          .text()
-          .trim();
+        const author = $(el).find(".book_item_author a").first().text().trim();
 
         const link = titleEl.attr("href")
           ? `https://www.cbdb.cz${titleEl.attr("href")}`
           : null;
 
         if (title) {
-          books.push({
-            title,
-            author,
-            link,
-          });
+          books.push({ title, author, link });
         }
       });
 
-      await sleep(1500);
+      await sleep(1200);
     } catch (e) {
-      console.error(`Error fetching ${user.label} page ${page}:`, e);
+      console.error(`Error ${user.label} page ${p}`, e);
     }
   }
 
@@ -141,15 +94,27 @@ async function scrapeUser(user) {
 }
 
 (async () => {
-  // create static folder automatically
   if (!fs.existsSync("static")) {
     fs.mkdirSync("static");
   }
 
+  const browser = await chromium.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
+
+  const context = await browser.newContext({
+    userAgent:
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122 Safari/537.36",
+    locale: "cs-CZ",
+  });
+
+  const page = await context.newPage();
+
   const merged = {};
 
   for (const user of users) {
-    const userBooks = await scrapeUser(user);
+    const userBooks = await scrapeUser(page, user);
 
     console.log(`${user.label}: ${userBooks.length} books scraped`);
 
@@ -157,17 +122,16 @@ async function scrapeUser(user) {
       const key = `${book.title}||${book.author}`;
 
       if (!merged[key]) {
-        merged[key] = {
-          ...book,
-          readers: [],
-        };
+        merged[key] = { ...book, readers: [] };
       }
 
       merged[key].readers.push(user.label);
     }
 
-    await sleep(5000);
+    await sleep(2000);
   }
+
+  await browser.close();
 
   const finalBooks = Object.values(merged);
 

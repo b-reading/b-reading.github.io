@@ -18,8 +18,8 @@
   },
   {
     "title": "Alchymista",
-    "author": "Paulo Coelho",
-    "link": "https://www.cbdb.cz/kniha-117-alchymista-o-alquimista",
+    "author": "Michael Scott",
+    "link": "https://www.cbdb.cz/kniha-5801-alchymista-alchemyst",
     "readers": [
       "Dominik",
       "hancik"
@@ -27,8 +27,8 @@
   },
   {
     "title": "Alchymista",
-    "author": "Michael Scott",
-    "link": "https://www.cbdb.cz/kniha-5801-alchymista-alchemyst",
+    "author": "Paulo Coelho",
+    "link": "https://www.cbdb.cz/kniha-117-alchymista-o-alquimista",
     "readers": [
       "Dominik",
       "hancik"
@@ -1127,6 +1127,14 @@
       "Dominik",
       "hancik",
       "Daniel"
+    ]
+  },
+  {
+    "title": "Království z kostí",
+    "author": "J. D. Kirk",
+    "link": "https://www.cbdb.cz/kniha-456112-kralovstvi-z-kosti-a-litter-of-bones",
+    "readers": [
+      "Dominik"
     ]
   },
   {

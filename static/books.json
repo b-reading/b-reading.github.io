@@ -913,19 +913,19 @@
   },
   {
     "title": "Inferno",
-    "author": "Dmitrij Rus",
-    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
-    "readers": [
-      "Dominik"
-    ]
-  },
-  {
-    "title": "Inferno",
     "author": "Dan Brown",
     "link": "https://www.cbdb.cz/kniha-87866-inferno-inferno",
     "readers": [
       "Dominik",
       "hancik"
+    ]
+  },
+  {
+    "title": "Inferno",
+    "author": "Dmitrij Rus",
+    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
+    "readers": [
+      "Dominik"
     ]
   },
   {
@@ -4625,7 +4625,7 @@
   {
     "title": "Postmortem",
     "author": "Patricia Cornwell",
-    "link": "https://www.cbdb.cz/kniha-15721-postmortem-postmortem",
+    "link": "https://www.cbdb.cz/kniha-419170-postmortem",
     "readers": [
       "hancik",
       "hancik"
@@ -4838,6 +4838,14 @@
     "readers": [
       "hancik",
       "Daniel"
+    ]
+  },
+  {
+    "title": "Šest vran",
+    "author": "Leigh Bardugo",
+    "link": "https://www.cbdb.cz/kniha-205474-sest-vran-six-of-crows",
+    "readers": [
+      "hancik"
     ]
   },
   {

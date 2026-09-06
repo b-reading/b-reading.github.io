@@ -18,8 +18,8 @@
   },
   {
     "title": "Alchymista",
-    "author": "Michael Scott",
-    "link": "https://www.cbdb.cz/kniha-5801-alchymista-alchemyst",
+    "author": "Paulo Coelho",
+    "link": "https://www.cbdb.cz/kniha-117-alchymista-o-alquimista",
     "readers": [
       "Dominik",
       "hancik"
@@ -27,8 +27,8 @@
   },
   {
     "title": "Alchymista",
-    "author": "Paulo Coelho",
-    "link": "https://www.cbdb.cz/kniha-117-alchymista-o-alquimista",
+    "author": "Michael Scott",
+    "link": "https://www.cbdb.cz/kniha-5801-alchymista-alchemyst",
     "readers": [
       "Dominik",
       "hancik"
@@ -3158,7 +3158,7 @@
   {
     "title": "Cesta na Kiribati",
     "author": "Erich von Däniken",
-    "link": "https://www.cbdb.cz/kniha-29922-cesta-na-kiribati",
+    "link": "https://www.cbdb.cz/kniha-29922-cesta-na-kiribati-reise-nach-kiribati-abenteuer-zwischen-himmel-und-erde",
     "readers": [
       "hancik"
     ]
@@ -4659,7 +4659,7 @@
   {
     "title": "Postmortem",
     "author": "Patricia Cornwell",
-    "link": "https://www.cbdb.cz/kniha-15721-postmortem-postmortem",
+    "link": "https://www.cbdb.cz/kniha-419170-postmortem",
     "readers": [
       "hancik",
       "hancik"
@@ -4677,6 +4677,14 @@
     "title": "Predator",
     "author": "Patricia Cornwell",
     "link": "https://www.cbdb.cz/kniha-419183-predator",
+    "readers": [
+      "hancik"
+    ]
+  },
+  {
+    "title": "Příliv démonů",
+    "author": "Laurie Forest",
+    "link": "https://www.cbdb.cz/kniha-495250-priliv-demonu-the-demon-tide",
     "readers": [
       "hancik"
     ]

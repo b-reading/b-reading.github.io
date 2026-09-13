@@ -913,19 +913,19 @@
   },
   {
     "title": "Inferno",
+    "author": "Dmitrij Rus",
+    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
+    "readers": [
+      "Dominik"
+    ]
+  },
+  {
+    "title": "Inferno",
     "author": "Dan Brown",
     "link": "https://www.cbdb.cz/kniha-87866-inferno-inferno",
     "readers": [
       "Dominik",
       "hancik"
-    ]
-  },
-  {
-    "title": "Inferno",
-    "author": "Dmitrij Rus",
-    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
-    "readers": [
-      "Dominik"
     ]
   },
   {
@@ -4310,6 +4310,14 @@
     ]
   },
   {
+    "title": "Nelítostný lovec",
+    "author": "Kristen Ciccarelli",
+    "link": "https://www.cbdb.cz/kniha-532759-nelitostny-lovec-heartless-hunter",
+    "readers": [
+      "hancik"
+    ]
+  },
+  {
     "title": "Nemesis",
     "author": "Agatha Christie",
     "link": "https://www.cbdb.cz/kniha-306-nemesis-nemesis",
@@ -4659,7 +4667,7 @@
   {
     "title": "Postmortem",
     "author": "Patricia Cornwell",
-    "link": "https://www.cbdb.cz/kniha-419170-postmortem",
+    "link": "https://www.cbdb.cz/kniha-15721-postmortem-postmortem",
     "readers": [
       "hancik",
       "hancik"

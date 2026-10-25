@@ -922,19 +922,19 @@
   },
   {
     "title": "Inferno",
-    "author": "Dmitrij Rus",
-    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
-    "readers": [
-      "Dominik"
-    ]
-  },
-  {
-    "title": "Inferno",
     "author": "Dan Brown",
     "link": "https://www.cbdb.cz/kniha-87866-inferno-inferno",
     "readers": [
       "Dominik",
       "hancik"
+    ]
+  },
+  {
+    "title": "Inferno",
+    "author": "Dmitrij Rus",
+    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
+    "readers": [
+      "Dominik"
     ]
   },
   {
@@ -1536,7 +1536,8 @@
     "link": "https://www.cbdb.cz/kniha-325046-neotvirat-kouse-bitte-nicht-offnen-bissig",
     "readers": [
       "Dominik",
-      "Daniel"
+      "Daniel",
+      "Jakub"
     ]
   },
   {
@@ -5492,15 +5493,16 @@
   {
     "title": "Vražda pro štěstí",
     "author": "Josef Škvorecký",
-    "link": "https://www.cbdb.cz/kniha-18696-vrazda-pro-stesti-vrazda-pro-stesti",
+    "link": "https://www.cbdb.cz/kniha-18696-vrazda-pro-stesti",
     "readers": [
+      "hancik",
       "hancik"
     ]
   },
   {
     "title": "Vražda se zárukou",
     "author": "Josef Škvorecký",
-    "link": "https://www.cbdb.cz/kniha-18697-vrazda-se-zarukou-vrazda-se-zarukou",
+    "link": "https://www.cbdb.cz/kniha-18697-vrazda-se-zarukou",
     "readers": [
       "hancik"
     ]
@@ -5524,7 +5526,7 @@
   {
     "title": "Vražda v zastoupení",
     "author": "Josef Škvorecký",
-    "link": "https://www.cbdb.cz/kniha-18698-vrazda-v-zastoupeni-vrazda-v-zastoupeni",
+    "link": "https://www.cbdb.cz/kniha-18698-vrazda-v-zastoupeni",
     "readers": [
       "hancik"
     ]

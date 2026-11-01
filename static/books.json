@@ -307,7 +307,16 @@
     "link": "https://www.cbdb.cz/kniha-1836-danny-mistr-sveta-danny-the-champion-of-the-world",
     "readers": [
       "Dominik",
-      "Daniel"
+      "Daniel",
+      "Jakub"
+    ]
+  },
+  {
+    "title": "Den rozřazení",
+    "author": "Rebecca Yarros",
+    "link": "https://www.cbdb.cz/kniha-573261-den-rozrazeni-threshing-day",
+    "readers": [
+      "Dominik"
     ]
   },
   {
@@ -922,19 +931,19 @@
   },
   {
     "title": "Inferno",
+    "author": "Dmitrij Rus",
+    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
+    "readers": [
+      "Dominik"
+    ]
+  },
+  {
+    "title": "Inferno",
     "author": "Dan Brown",
     "link": "https://www.cbdb.cz/kniha-87866-inferno-inferno",
     "readers": [
       "Dominik",
       "hancik"
-    ]
-  },
-  {
-    "title": "Inferno",
-    "author": "Dmitrij Rus",
-    "link": "https://www.cbdb.cz/kniha-362766-inferno-igrat-ctoby-zit-kniga-4-inferno",
-    "readers": [
-      "Dominik"
     ]
   },
   {
@@ -1698,6 +1707,15 @@
     "readers": [
       "Dominik",
       "Daniel"
+    ]
+  },
+  {
+    "title": "Onyxová bouře",
+    "author": "Rebecca Yarros",
+    "link": "https://www.cbdb.cz/kniha-533612-onyxova-boure-onyx-storm",
+    "readers": [
+      "Dominik",
+      "hancik"
     ]
   },
   {
@@ -2670,6 +2688,15 @@
     "link": "https://www.cbdb.cz/kniha-348074-zdivocele-pohadky-revolting-rhymes",
     "readers": [
       "Dominik"
+    ]
+  },
+  {
+    "title": "Železný plamen",
+    "author": "Rebecca Yarros",
+    "link": "https://www.cbdb.cz/kniha-522669-zelezny-plamen-iron-flame",
+    "readers": [
+      "Dominik",
+      "hancik"
     ]
   },
   {
@@ -4464,14 +4491,6 @@
     ]
   },
   {
-    "title": "Onyxová bouře",
-    "author": "Rebecca Yarros",
-    "link": "https://www.cbdb.cz/kniha-533612-onyxova-boure-onyx-storm",
-    "readers": [
-      "hancik"
-    ]
-  },
-  {
     "title": "Osudné svědectví",
     "author": "Robert Bryndza",
     "link": "https://www.cbdb.cz/kniha-472505-osudne-svedectvi-fatal-witness",
@@ -5732,14 +5751,6 @@
     ]
   },
   {
-    "title": "Železný plamen",
-    "author": "Rebecca Yarros",
-    "link": "https://www.cbdb.cz/kniha-522669-zelezny-plamen-iron-flame",
-    "readers": [
-      "hancik"
-    ]
-  },
-  {
     "title": "Žhavé léto",
     "author": "Kolektiv autorů",
     "link": "https://www.cbdb.cz/kniha-425845-zhave-leto",
@@ -6663,6 +6674,14 @@
     "title": "Bylo - nebylo",
     "author": "Karel Šmerhovský",
     "link": "https://www.cbdb.cz/kniha-373625-bylo-nebylo",
+    "readers": [
+      "Jakub"
+    ]
+  },
+  {
+    "title": "Detektiv Klubko. Případ černého ducha",
+    "author": "Ursel Scheffler",
+    "link": "https://www.cbdb.cz/kniha-12808-detektiv-klubko-pripad-cerneho-ducha-kommissar-kugelblitz-7-der-schwarze-geist",
     "readers": [
       "Jakub"
     ]

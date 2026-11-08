@@ -18,8 +18,8 @@
   },
   {
     "title": "Alchymista",
-    "author": "Michael Scott",
-    "link": "https://www.cbdb.cz/kniha-5801-alchymista-alchemyst",
+    "author": "Paulo Coelho",
+    "link": "https://www.cbdb.cz/kniha-117-alchymista-o-alquimista",
     "readers": [
       "Dominik",
       "hancik"
@@ -27,8 +27,8 @@
   },
   {
     "title": "Alchymista",
-    "author": "Paulo Coelho",
-    "link": "https://www.cbdb.cz/kniha-117-alchymista-o-alquimista",
+    "author": "Michael Scott",
+    "link": "https://www.cbdb.cz/kniha-5801-alchymista-alchemyst",
     "readers": [
       "Dominik",
       "hancik"
@@ -619,6 +619,14 @@
     ]
   },
   {
+    "title": "Farma zvířat",
+    "author": "George Orwell",
+    "link": "https://www.cbdb.cz/kniha-772-farma-zvirat-the-animal-farm",
+    "readers": [
+      "Dominik"
+    ]
+  },
+  {
     "title": "Fialová",
     "author": "Anna Šuláková",
     "link": "https://www.cbdb.cz/kniha-388852-fialova",
@@ -1188,6 +1196,14 @@
     "readers": [
       "Dominik",
       "hancik"
+    ]
+  },
+  {
+    "title": "Lakomec",
+    "author": "Jean-Baptiste Poquelin - Molière",
+    "link": "https://www.cbdb.cz/kniha-4040-lakomec-lavare-ou-lecole-du-mensonge",
+    "readers": [
+      "Dominik"
     ]
   },
   {
@@ -4696,7 +4712,7 @@
   {
     "title": "Postmortem",
     "author": "Patricia Cornwell",
-    "link": "https://www.cbdb.cz/kniha-419170-postmortem",
+    "link": "https://www.cbdb.cz/kniha-15721-postmortem-postmortem",
     "readers": [
       "hancik",
       "hancik"
